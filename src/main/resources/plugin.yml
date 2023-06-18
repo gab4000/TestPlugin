@@ -1,0 +1,37 @@
+name: TestPlugin
+version: '${project.version}'
+main: fr.gab400.testplugin.TestPlugin
+api-version: 1.19
+commands:
+  broadcast:
+    description: Commande pour envoyer un message a tout le serveur
+    permission: broadcast.use
+    aliases:
+      - bc
+  gamemode:
+    description: Changer de mode de jeu
+    permission: gamemode.use
+    aliases:
+      - gm
+  home:
+    description: Mettre des homes
+    aliases:
+      - hm
+  vanish:
+    description: Se rendre invisible sur le serveur
+    permission: vanish.use
+    aliases:
+      - vn
+  top:
+    description: Pour se tp au bloc le plus haut
+    permission: top.use
+  players:
+    description: Ouvre la liste des joueurs connectés
+    permission: players.use
+    aliases:
+      - py
+  freeze:
+    description: Freeze des joueurs
+    permission: freeze.use
+    aliases:
+      - fz
