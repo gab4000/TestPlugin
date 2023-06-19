@@ -1,5 +1,5 @@
 # TestPlugin
-It's my plugin where I test Spigot's functionalities. It is a bit of a laboratory where I experiment with Spigot.
+It's my plugin where I test Spigot's functionalities. It is a bit of a laboratory where I experiment with Spigot. This plugin will never be in final version (1.0). I will post releases to save ancien code but he will be always INDEV.
 The plugin is currently in french. I plan to add a differents languages soon !
 
 ## Commands
