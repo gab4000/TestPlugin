@@ -2,23 +2,26 @@ package fr.gab400.testplugin;
 
 import fr.gab400.testplugin.commands.CommandHome;
 import fr.gab400.testplugin.commands.staff.*;
-import fr.gab400.testplugin.events.*;
-import org.bukkit.configuration.file.YamlConfiguration;
+import fr.gab400.testplugin.events.FreezeEvents;
+import fr.gab400.testplugin.events.JoinEvent;
+import fr.gab400.testplugin.events.LeaveEvent;
+import fr.gab400.testplugin.events.PlayersMenuEvents;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.Objects;
 
-public class TestPlugin extends JavaPlugin {
+public class Core extends JavaPlugin {
 
-    public static TestPlugin instance;
-    public static TestPlugin getInstance() {
+    public static Core instance;
+
+    public static Core getInstance() {
         return instance;
     }
 
     public ArrayList<Player> invisible_list = new ArrayList<>();
+
     @Override
     public void onEnable() {
 
@@ -39,11 +42,5 @@ public class TestPlugin extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new PlayersMenuEvents(), this);
         getServer().getPluginManager().registerEvents(new FreezeEvents(), this);
 
-    }
-
-    public YamlConfiguration getConfig(String lang) {
-        File file = new File(this.getDataFolder(), "/" + lang + ".yml");
-        YamlConfiguration configuration = YamlConfiguration.loadConfiguration(file);
-        return configuration;
     }
 }

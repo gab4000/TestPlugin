@@ -1,6 +1,6 @@
 package fr.gab400.testplugin.commands;
 
-import fr.gab400.testplugin.TestPlugin;
+import fr.gab400.testplugin.Core;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
@@ -19,7 +19,7 @@ public class CommandHome implements CommandExecutor {
         if (sender instanceof Player player) {
             if (args.length == 0) {
                 player.sendMessage(ChatColor.YELLOW + "Vos homes sont : ");
-                for (String string : Objects.requireNonNull(TestPlugin.getInstance().getConfig().getConfigurationSection("home." + player.getUniqueId())).getKeys(false)) {
+                for (String string : Objects.requireNonNull(Core.getInstance().getConfig().getConfigurationSection("home." + player.getUniqueId())).getKeys(false)) {
                     if (string == null) {
                         return false;
                     }
@@ -35,43 +35,41 @@ public class CommandHome implements CommandExecutor {
 
             else if (args.length == 2) {
                 if (Objects.equals(args[0], "tp")) {
-                    if (TestPlugin.getInstance().getConfig().contains("home."+player.getUniqueId().toString()+"."+args[1])) {
-                        World w = Bukkit.getServer().getWorld(Objects.requireNonNull(TestPlugin.getInstance().getConfig().getString("home." + player.getUniqueId() + "." + args[1] + ".world")));
-                        double x = TestPlugin.getInstance().getConfig().getDouble("home."+player.getUniqueId() + "."+args[1] + ".x");
-                        double y = TestPlugin.getInstance().getConfig().getDouble("home."+player.getUniqueId() + "."+args[1] + ".y");
-                        double z = TestPlugin.getInstance().getConfig().getDouble("home."+player.getUniqueId() + "."+args[1] + ".z");
-                        double pitch = TestPlugin.getInstance().getConfig().getDouble("home."+player.getUniqueId() + "."+args[1] + ".pitch");
-                        double yaw = TestPlugin.getInstance().getConfig().getDouble("home."+player.getUniqueId() + "."+args[1] + ".yaw");
+                    if (Core.getInstance().getConfig().contains("home." + player.getUniqueId().toString() + "." + args[1])) {
+                        World w = Bukkit.getServer().getWorld(Objects.requireNonNull(Core.getInstance().getConfig().getString("home." + player.getUniqueId() + "." + args[1] + ".world")));
+                        double x = Core.getInstance().getConfig().getDouble("home." + player.getUniqueId() + "." + args[1] + ".x");
+                        double y = Core.getInstance().getConfig().getDouble("home." + player.getUniqueId() + "." + args[1] + ".y");
+                        double z = Core.getInstance().getConfig().getDouble("home." + player.getUniqueId() + "." + args[1] + ".z");
+                        double pitch = Core.getInstance().getConfig().getDouble("home." + player.getUniqueId() + "." + args[1] + ".pitch");
+                        double yaw = Core.getInstance().getConfig().getDouble("home." + player.getUniqueId() + "." + args[1] + ".yaw");
                         player.teleport(new Location(w, x, y, z, (float) yaw, (float) pitch));
                         player.sendMessage(ChatColor.DARK_GREEN + "Vous avez été téléporté au home !");
                         return true;
-                    }
-                    else {
+                    } else {
                         player.sendMessage(ChatColor.DARK_RED + "Ce home ne semble pas exister !");
                     }
                     return false;
                 }
                 else if (Objects.equals(args[0], "add")) {
                     if (args[1] != null) {
-                        TestPlugin.getInstance().getConfig().set("home." + player.getUniqueId() + "." + args[1] + ".world", Objects.requireNonNull(player.getLocation().getWorld()).getName());
-                        TestPlugin.getInstance().getConfig().set("home." + player.getUniqueId() + "." + args[1] + ".x", player.getLocation().getX());
-                        TestPlugin.getInstance().getConfig().set("home." + player.getUniqueId() + "." + args[1] + ".y", player.getLocation().getY());
-                        TestPlugin.getInstance().getConfig().set("home." + player.getUniqueId() + "." + args[1] + ".z", player.getLocation().getZ());
-                        TestPlugin.getInstance().getConfig().set("home." + player.getUniqueId() + "." + args[1] + ".pitch", player.getEyeLocation().getPitch());
-                        TestPlugin.getInstance().getConfig().set("home." + player.getUniqueId() + "." + args[1] + ".yaw", player.getEyeLocation().getYaw());
-                        TestPlugin.getInstance().saveConfig();
+                        Core.getInstance().getConfig().set("home." + player.getUniqueId() + "." + args[1] + ".world", Objects.requireNonNull(player.getLocation().getWorld()).getName());
+                        Core.getInstance().getConfig().set("home." + player.getUniqueId() + "." + args[1] + ".x", player.getLocation().getX());
+                        Core.getInstance().getConfig().set("home." + player.getUniqueId() + "." + args[1] + ".y", player.getLocation().getY());
+                        Core.getInstance().getConfig().set("home." + player.getUniqueId() + "." + args[1] + ".z", player.getLocation().getZ());
+                        Core.getInstance().getConfig().set("home." + player.getUniqueId() + "." + args[1] + ".pitch", player.getEyeLocation().getPitch());
+                        Core.getInstance().getConfig().set("home." + player.getUniqueId() + "." + args[1] + ".yaw", player.getEyeLocation().getYaw());
+                        Core.getInstance().saveConfig();
                         player.sendMessage(ChatColor.DARK_GREEN + "Home ajouté !");
                         return true;
                     }
                 }
                 else if (Objects.equals(args[0], "del")) {
-                    if (TestPlugin.getInstance().getConfig().contains("home."+player.getUniqueId() + "." + args[1])) {
-                        TestPlugin.getInstance().getConfig().set("home."+player.getUniqueId() + "." + args[1], null);
-                        TestPlugin.getInstance().saveConfig();
+                    if (Core.getInstance().getConfig().contains("home." + player.getUniqueId() + "." + args[1])) {
+                        Core.getInstance().getConfig().set("home." + player.getUniqueId() + "." + args[1], null);
+                        Core.getInstance().saveConfig();
                         player.sendMessage(ChatColor.DARK_GREEN + "Home retiré !");
                         return true;
-                    }
-                    else {
+                    } else {
                         player.sendMessage(ChatColor.DARK_RED + "Ce home ne semble pas exister !");
                         return false;
                     }

@@ -1,6 +1,6 @@
 package fr.gab400.testplugin.events;
 
-import fr.gab400.testplugin.TestPlugin;
+import fr.gab400.testplugin.Core;
 import org.bukkit.Bukkit;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -8,9 +8,9 @@ import org.bukkit.event.player.PlayerJoinEvent;
 
 public class JoinEvent implements Listener {
 
-    TestPlugin plugin;
+    Core plugin;
 
-    public JoinEvent(TestPlugin plugin) {
+    public JoinEvent(Core plugin) {
         this.plugin = plugin;
     }
 

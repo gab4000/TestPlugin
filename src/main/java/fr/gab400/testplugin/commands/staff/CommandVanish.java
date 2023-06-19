@@ -1,6 +1,6 @@
 package fr.gab400.testplugin.commands.staff;
 
-import fr.gab400.testplugin.TestPlugin;
+import fr.gab400.testplugin.Core;
 import net.md_5.bungee.api.ChatMessageType;
 import net.md_5.bungee.api.chat.TextComponent;
 import org.bukkit.Bukkit;
@@ -12,9 +12,9 @@ import org.bukkit.entity.Player;
 
 public class CommandVanish implements CommandExecutor {
 
-    TestPlugin plugin;
+    Core plugin;
 
-    public CommandVanish(TestPlugin plugin) {
+    public CommandVanish(Core plugin) {
         this.plugin = plugin;
     }
 
