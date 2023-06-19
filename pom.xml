@@ -32,7 +32,7 @@
                 <artifactId>maven-jar-plugin</artifactId>
                 <version>3.3.0</version>
                 <configuration>
-                    <outputDirectory>/Users/gab/Documents/Dev_MC/Spigot/test_server/plugins</outputDirectory>
+                    <outputDirectory></outputDirectory>
                 </configuration>
             </plugin>
             <plugin>
