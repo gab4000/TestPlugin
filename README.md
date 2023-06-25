@@ -3,6 +3,8 @@ It's my plugin where I test Spigot's functionalities. It is a bit of a laborator
 
 The plugin is currently in french. I plan to add a differents languages soon !
 
+You can see all releases [here](https://github.com/gab4000/TestPlugin/releases)
+
 ## Commands
 * /home (hm) <add/del/tp> *home* &rarr; Place/teleport/remove a home in the world
 * /gamemode (gm) <s/sp/c/a> &rarr; Change the gamemode quickly <code style="color: red;">Requiert permissions</code>
