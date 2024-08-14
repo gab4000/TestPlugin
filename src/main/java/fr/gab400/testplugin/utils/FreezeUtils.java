@@ -19,12 +19,10 @@ public class FreezeUtils {
                 target.sendMessage(prefix + ChatColor.DARK_RED + "Tu a été freeze par " + ChatColor.BLUE + player.getDisplayName() + ChatColor.DARK_RED + " !");
                 player.sendMessage(prefix + ChatColor.DARK_RED + "Vous avez freeze " + ChatColor.BLUE + target.getDisplayName() + ChatColor.DARK_RED + " !");
                 frozen_players.add(target);
-                PlayersMenuUtils.state = "§4Freeze";
             } else {
                 target.sendMessage(prefix + ChatColor.DARK_GREEN + "Tu a été unfreeze par " + ChatColor.BLUE + player.getDisplayName() + ChatColor.DARK_GREEN + " !");
                 player.sendMessage(prefix + ChatColor.DARK_GREEN + "Vous avez unfreeze " + ChatColor.BLUE + target.getDisplayName() + ChatColor.DARK_GREEN + " !");
                 frozen_players.remove(target);
-                PlayersMenuUtils.state = "§2Unfreeze";
             }
         }
     }

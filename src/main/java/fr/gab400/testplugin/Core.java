@@ -41,6 +41,5 @@ public class Core extends JavaPlugin {
 		getServer().getPluginManager().registerEvents(new JoinEvent(this), this);
 		getServer().getPluginManager().registerEvents(new LeaveEvent(), this);
 		getServer().getPluginManager().registerEvents(new FreezeEvents(), this);
-		getServer().getPluginManager().registerEvents(new PlayersMenuEvents(), this);
 	}
 }
