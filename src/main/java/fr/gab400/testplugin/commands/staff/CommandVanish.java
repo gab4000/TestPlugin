@@ -12,10 +12,10 @@ import org.bukkit.entity.Player;
 
 public class CommandVanish implements CommandExecutor {
 
-    Core plugin;
+    Core core;
 
     public CommandVanish(Core plugin) {
-        this.plugin = plugin;
+        this.core = plugin;
     }
 
     @Override
@@ -28,19 +28,19 @@ public class CommandVanish implements CommandExecutor {
                 return false;
             }
 
-            if (!plugin.invisible_list.contains(player)) {
+            if (! core.invisible_list.contains(player)) {
                 for (Player people : Bukkit.getOnlinePlayers()) {
-                    people.hidePlayer(plugin, player);
+                    people.hidePlayer(core, player);
                 }
-                plugin.invisible_list.add(player);
+                core.invisible_list.add(player);
                 player.sendMessage(ChatColor.RED + "Vous êtes désormais invisible sur le serveur.");
                 player.spigot().sendMessage(ChatMessageType.ACTION_BAR, new TextComponent(ChatColor.AQUA + "Vanish activé"));
 
             } else {
                 for (Player people : Bukkit.getOnlinePlayers()) {
-                    people.showPlayer(plugin, player);
+                    people.showPlayer(core, player);
                 }
-                plugin.invisible_list.remove(player);
+                core.invisible_list.remove(player);
                 player.sendMessage(ChatColor.RED + "Vous êtes désormais visible sur le serveur.");
             }
         } else {

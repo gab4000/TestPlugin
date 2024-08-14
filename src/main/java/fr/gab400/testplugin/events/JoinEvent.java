@@ -8,18 +8,18 @@ import org.bukkit.event.player.PlayerJoinEvent;
 
 public class JoinEvent implements Listener {
 
-    Core plugin;
+    Core core;
 
     public JoinEvent(Core plugin) {
-        this.plugin = plugin;
+        this.core = plugin;
     }
 
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent e) {
         Bukkit.broadcastMessage("[§2+§r] §9" + e.getPlayer().getName() + " §2a rejoint le serveur !");
 
-        for (int i = 0; i < plugin.invisible_list.size(); i++) {
-            e.getPlayer().hidePlayer(plugin, plugin.invisible_list.get(i));
+        for (int i = 0; i < core.invisible_list.size(); i++) {
+            e.getPlayer().hidePlayer(core, core.invisible_list.get(i));
         }
     }
 

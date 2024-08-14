@@ -1,6 +1,6 @@
 package fr.gab400.testplugin.commands.staff;
 
-import fr.gab400.testplugin.utils.PlayersMenuUtils;
+import fr.gab400.testplugin.menus.PlayersMenu;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -16,7 +16,8 @@ public class CommandPlayers implements CommandExecutor {
                 player.sendMessage(ChatColor.RED + "La commande est " + ChatColor.BLUE + "/players");
                 return false;
             }
-            PlayersMenuUtils.openPlayersMenu(player);
+            PlayersMenu menu = new PlayersMenu(player);
+            menu.open();
         } else {
             return false;
         }

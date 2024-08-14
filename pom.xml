@@ -27,12 +27,12 @@
                     <target>16</target>
                 </configuration>
             </plugin>
-                 <plugin>
+            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
                 <version>3.3.0</version>
                 <configuration>
-                    <outputDirectory>/Users/gab/Documents/Dev_MC/Spigot/test_server/plugins</outputDirectory>
+                    <outputDirectory>C:\Users\User\Desktop\DevMC\Spigot1.19.3\plugins</outputDirectory>
                 </configuration>
             </plugin>
             <plugin>
@@ -77,6 +77,11 @@
             <artifactId>spigot-api</artifactId>
             <version>1.19.3-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>dev.xernas</groupId>
+            <artifactId>MenuLib</artifactId>
+            <version>1.1.0</version>
         </dependency>
     </dependencies>
 </project>

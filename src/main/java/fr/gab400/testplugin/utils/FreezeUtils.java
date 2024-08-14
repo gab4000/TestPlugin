@@ -1,13 +1,14 @@
 package fr.gab400.testplugin.utils;
 
+import fr.gab400.testplugin.Core;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 
 import java.util.ArrayList;
 
 public class FreezeUtils {
-
-    public static ArrayList<Player> frozen_players = new ArrayList<>();
+    
+    public static ArrayList<Player> frozen_players = Core.frozen_players;
     public static String prefix = ChatColor.GRAY + "[" + ChatColor.BLUE + "Freeze" + ChatColor.GRAY + "] ";
 
     public static void switch_freeze(Player player, Player target) {

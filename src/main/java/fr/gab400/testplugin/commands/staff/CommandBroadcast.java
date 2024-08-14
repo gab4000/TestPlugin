@@ -9,10 +9,10 @@ import org.bukkit.command.CommandSender;
 
 public class CommandBroadcast implements CommandExecutor {
 
-    Core plugin;
+    Core core;
 
     public CommandBroadcast(Core plugin) {
-        this.plugin = plugin;
+        this.core = plugin;
     }
 
     @Override

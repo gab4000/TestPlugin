@@ -1,6 +1,6 @@
 name: TestPlugin
 version: '${project.version}'
-main: fr.gab400.testplugin.TestPlugin
+main: fr.gab400.testplugin.Core
 api-version: 1.19
 commands:
   broadcast:
