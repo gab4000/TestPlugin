@@ -6,7 +6,7 @@ The plugin is currently in french. I plan to add a differents languages soon !
 You can see all releases [here](https://github.com/gab4000/TestPlugin/releases)
 
 ## Commands
-* /home (hm) <add/del/tp> *home* &rarr; Place/teleport/remove a home in the world
+* /home (hm) <add/del/tp> *home* &rarr; Place/remove/teleport a home in the world
 * /gamemode (gm) <s/sp/c/a> &rarr; Change the gamemode quickly <code style="color: red;">Requiert permissions</code>
 * /vanish (vn) &rarr; Switch between vanish or not <code style="color: red;">Requiert permissions</code>
 * /top &rarr; You're teleported at the highest block in your X/Z coordinates <code style="color: red;">Requiert permissions</code>
